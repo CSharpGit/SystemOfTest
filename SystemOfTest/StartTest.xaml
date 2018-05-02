@@ -1,0 +1,51 @@
+﻿<Window x:Class="SystemOfTest.StartTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemOfTest"
+        mc:Ignorable="d"
+        Title="无纸化考试系统" Height="650" Width="1000" Loaded="Window_Loaded" VerticalAlignment="Top" HorizontalAlignment="Center" Top="65" WindowStartupLocation="Manual" ResizeMode="NoResize" WindowStyle="None">
+    <Grid>
+        <StackPanel>
+            <WrapPanel>
+                <Menu x:Name="menu" Height="23.33" VerticalAlignment="Top">
+                    <MenuItem Header="C语言">
+                        <MenuItem Name="Choice_C" Header="选择题" Click="Choice_C_Click"/>
+                        <MenuItem Name="Fill_C" Header="填空题" Click="Fill_C_Click"/>
+                        <MenuItem Name="Operation_C" Header="操作题" Click="Operation_C_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="美工">
+                        <MenuItem Name="Choice_A" Header="选择题" Click="Choice_A_Click"/>
+                        <MenuItem Name="Fill_A" Header="填空题" Click="Fill_A_Click"/>
+                        <MenuItem Name="Operation_A" Header="操作题" Click="Operation_A_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="Web">
+                        <MenuItem Name="Choice_Web" Header="选择题" Click="Choice_Web_Click"/>
+                        <MenuItem Name="Fill_Web" Header="填空题" Click="Fill_Web_Click"/>
+                        <MenuItem Name="Operation_Web" Header="操作题" Click="Operation_Web_Click"/>
+                    </MenuItem>
+                </Menu>
+            </WrapPanel>
+            <Grid Height="450" Width="1000" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <DocumentViewer Name="docViewer" Background="LightGray" Height="450" Width="800" HorizontalAlignment="Left" VerticalAlignment="Top"></DocumentViewer>
+                <Button Name="Read" Content="打开试题" Style="{StaticResource btn-primary}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="820,40,0,0" FontSize="22" Height="40" Width="120" Click="Read_Click"></Button>
+            </Grid>
+            <Grid Name="grid_" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="160" Width="800">
+                    <ScrollViewer Name="SV" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+                        <StackPanel Name="sp" Orientation="Horizontal"></StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="800,-100,0,0" Height="60" Width="200">
+                <Button Name="Web_Fill"   HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource btn-success}" Visibility="Hidden" Height="60" Width="180" FontSize="22" Content="上传填空题答案" ></Button>
+                <Button Name="Web_Choice" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource btn-primary}" Visibility="Hidden"  Height="60" Width="180" FontSize="22" Content="上传选择题答案" Click="Web_Choice_Click"></Button>
+                <Button Name="A_Fill"     HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource btn-success}" Visibility="Hidden"  Height="60" Width="180" FontSize="22" Content="上传填空题答案"></Button>
+                <Button Name="A_Choice"   HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource btn-primary}" Visibility="Hidden"  Height="60" Width="180" FontSize="22" Content="上传选择题答案" Click="A_Choice_Click"></Button>
+                <Button Name="C_Fill"     HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource btn-success}" Visibility="Hidden"  Height="60" Width="180" FontSize="22" Content="上传填空题答案" Click="C_Fill_Click"></Button>
+                <Button Name="C_Choice"   HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource btn-primary}" Visibility="Hidden"  Height="60" Width="180" FontSize="22" Content="上传选择题答案" Click="C_Choice_Click"></Button>
+            </Grid>
+            <!--<StackPanel Name="stackpanel2">
+                        </StackPanel>-->
+        </StackPanel>
+    </Grid>
+</Window>

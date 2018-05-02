@@ -1,0 +1,34 @@
+﻿<Window x:Class="SystemOfTest.Info"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemOfTest"
+        mc:Ignorable="d"
+        Title="Info" Height="60" Width="1000" WindowStyle="None" Loaded="Window_Loaded" ResizeMode="NoResize" Topmost="True" HorizontalAlignment="Center" Top="2" WindowStartupLocation="Manual">
+    <Grid>
+        <StackPanel>
+            <WrapPanel>
+                <Label x:Name="textClass" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="47" FontSize="22"   Content ="{Binding Class}" />
+                <Label x:Name="textName"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="47" FontSize="22"   Content ="{Binding Name}" Margin="40,0,0,0" />
+                <Label x:Name="textNum"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="47" FontSize="22"   Content="{Binding Num}" Margin="40,0,0,0"/>
+                <Label Content="考试剩余时间" FontSize="22" Foreground="Red" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="40,0,0,0" Height="47"/>
+                <Grid Name="Grid1" Margin="40,0,0,0"  Width="220">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="47*" />
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="46*" />
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="47*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="02" Name="HourArea" Margin="0,0,0,0" Foreground="Red" VerticalAlignment="Center" FontSize="36" Height="47" Grid.Column="0"/>
+                    <TextBlock Text=" :"  Name="HourSplitMinute" Width="40" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="36" Grid.Column="1"/>
+                    <TextBlock Text="00" Name="MinuteArea" VerticalAlignment="Center" Foreground="Red" FontSize="36" Grid.Column="2" />
+                    <TextBlock Text=" :"  Name="MinuteSplitSecond" Width="40" VerticalAlignment="Center" Foreground="Red" HorizontalAlignment="Center" FontSize="36" Grid.Column="3"/>
+                    <TextBlock Text="00" Name="SecondArea" VerticalAlignment="Center" FontSize="36" Foreground="Red" Grid.Column="4"/>
+                </Grid>
+                <Button Name="Submit" Style="{StaticResource btn-warning}" Content="交卷" Width="80" Margin="40,0,0,0" Click="Submit_Click"/>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>
